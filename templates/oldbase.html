@@ -1,0 +1,98 @@
+{% load static %}
+
+<!--
+
+=========================================================
+* Impact Design System - v1.0.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/impact-design-system
+* Copyright 2010 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/impact-design-system/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Start your development with a Dashboard for Bootstrap 4."
+    />
+    <meta name="author" content="Creative Tim" />
+    <title>{% block title %}{% endblock %} | FirstProject</title>
+
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+    />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/nucleo/css/nucleo.css' %}"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' %}"
+      type="text/css"
+    />
+    <!-- Page plugins -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/fullcalendar/dist/fullcalendar.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/sweetalert2/dist/sweetalert2.min.css' %}"
+    />
+    <!-- Argon CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'css/dashboard.css' %}"
+      type="text/css"
+    />
+  </head>
+
+{% comment %} <body>
+    {{user}}<br>
+    {% for i in params %}
+    {{ i }}<br>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+    <p><a href="{% url 'logout'%}">로그아웃</a><p>
+     {% else %}   
+    <p><a href="{% url 'login'%}">로그인</a><p>  
+    <p><a href="{% url 'register'%}">회원가입</a>     
+    {% endif %}   
+    {% block content %}
+    {% endblock %}
+    
+</body> {% endcomment %}
+
+<body>
+    {% block content %} {% endblock %} {{ user }} <br />
+    {% for i in params %} {{i}}<br />
+    {% endfor %} {% if user.is_authenticated %}
+    <p><a href="{% url 'logout' %}">로그아웃</a></p>
+    {% else %}
+    <p><a href="{% url 'register' %}">회원가입</a></p>
+    <p><a href="{% url 'login' %}">로그인</a></p>
+    {% endif %}
+  </body>
+
+
+
+</html>
