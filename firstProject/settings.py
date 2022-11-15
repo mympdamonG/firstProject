@@ -50,12 +50,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'firstApp',
-    #'django_seed',
-    #'debug_toolbar',#django debug toolbar
+    #'firstApp.apps.ShortenerConfig',
+   
 ]
-# INTERNAL_IPS = [
-#      "127.0.0.1",
-#  ]  # Django Debug Toolbar
+INTERNAL_IPS = [
+     "127.0.0.1",
+]  # Django Debug Toolbar
 
 LOGIN_URL = "/login"
 
@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'debug_toolbar.middleware.DebugToolbarMiddleware',  # Django Debug Toolbar
+   
 ]
 
 
@@ -78,7 +78,7 @@ MIDDLEWARE = [
 #         'debug_toolbar.middleware.DebugToolbarMiddleware',
 #     )
 #     INSTALLED_APPS += (
-#         'debug_toolbar',
+#         'debug_toolbar', 'django_seed',
 #     )
 #     INTERNAL_IPS = ('127.0.0.1',)
 #     DEBUG_TOOLBAR_CONFIG = {
@@ -112,7 +112,7 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 

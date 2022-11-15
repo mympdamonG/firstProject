@@ -12,15 +12,18 @@ from firstApp.forms import RegisterForm, LoginForm, UrlCreateForm
 
 # Create your views here.
 
-def index(request):
-    user = Users.objects.filter(id=request.user.id).first()
-    email = user.email if user else "Anonymous User!"
-    print("logged in?" ,request.user.is_authenticated)
+# def index(request):
+#     user = Users.objects.filter(id=request.user.id).first()
+#     email = user.email if user else "Anonymous User!"
+#     print("logged in?" ,request.user.is_authenticated)
     
-    if request.user.is_authenticated is False:
-        email = "Anonymous User!"
-        print(email)
-    return render(request, "base.html", {"welcome_msg" : "Hello firstProject" })    
+#     if request.user.is_authenticated is False:
+#         email = "Anonymous User!"
+#         print(email)
+#     return render(request, "base.html", {"welcome_msg" : "Hello firstProject" })    
+
+def index(request):
+    return render(request, "base.html")
 
 
 

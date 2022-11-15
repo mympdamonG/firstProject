@@ -1,7 +1,10 @@
 *.pyc
 *~
+old*
 __pycache__
+/firstApp/migrations/
+/firstApp/__pycache__/
 venvpytho
+venv
 db.sqlite3
-/static
 .DS_Store
